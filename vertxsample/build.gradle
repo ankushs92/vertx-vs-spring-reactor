@@ -1,0 +1,59 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.2.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'io.github.ankushs92.benchmark'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+bootJar {
+    launchScript()
+}
+jar {
+    baseName = "vertxsample"
+}
+
+
+configurations {
+    providedRuntime
+    //Has often caused problems, we will just exclude this dependency altogether
+    all*.exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+}
+
+
+final String vertxVersion = "3.5.1"
+
+dependencies {
+
+    compile group: 'io.vertx', name: 'vertx-web', version: vertxVersion
+    compile group: 'io.vertx', name: 'vertx-core', version: vertxVersion
+    compile group: 'io.vertx', name: 'vertx-redis-client', version: vertxVersion
+    compile('org.springframework.boot:spring-boot-starter')
+
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.15'
+    //Misc
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.4'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.4'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.4'
+
+    compile('org.codehaus.groovy:groovy')
+    runtime('org.springframework.boot:spring-boot-devtools')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}

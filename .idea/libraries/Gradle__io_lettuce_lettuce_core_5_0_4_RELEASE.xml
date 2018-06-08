@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: io.lettuce:lettuce-core:5.0.4.RELEASE">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.lettuce/lettuce-core/5.0.4.RELEASE/ff59baa993b5ee0111cf6c5eeab004609f85a9e5/lettuce-core-5.0.4.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.lettuce/lettuce-core/5.0.4.RELEASE/6ef1609b28352bdf410f12dc541b1d19c76ea217/lettuce-core-5.0.4.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
