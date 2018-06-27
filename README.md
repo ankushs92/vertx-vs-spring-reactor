@@ -41,4 +41,4 @@ Transfer/sec:    234.03KB
 
 # Winner
 
-Vert.x is a clear winner here, with almost 9x more requests than Spring Reactor.
+Vert.x is a clear winner here, with almost 9x more throughput than Spring Reactor.
